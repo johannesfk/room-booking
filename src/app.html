@@ -4,10 +4,36 @@
 		<meta charset="utf-8" />
 		<link rel="icon" href="/favicon.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="manifest" href="/manifest.json" />
+
+		<link
+			rel="preload"
+			href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&amp;display=swap"
+			as="style"
+			onload="this.onload=null;this.rel='stylesheet'"
+		/>
+		<link
+			rel="preload"
+			href="https://fonts.googleapis.com/icon?family=Material+Icons"
+			as="style"
+			onload="this.onload=null;this.rel='stylesheet'"
+		/>
+		<noscript>
+			<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&amp;display=swap" />
+			<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+		</noscript>
 
 		%svelte.head%
 	</head>
 	<body>
 		<div id="svelte">%svelte.body%</div>
+		<noscript> Please enable JavaScript to continue using this application. </noscript>
+		<!-- <script>
+			window.addEventListener("load", () => {
+				if ("serviceWorker" in navigator) {
+					navigator.serviceWorker.register("service-worker.ts");
+				}
+			});
+		</script> -->
 	</body>
 </html>
