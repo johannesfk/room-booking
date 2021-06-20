@@ -1,17 +1,19 @@
 <script lang="ts">
 	import Header from '$lib/Header/index.svelte';
+	import WeekSelector from '$lib/WeekSelector/index.svelte';
 	import "../app.postcss";
 </script>
 
-<Header>
+<Header/>
+<WeekSelector/>
 
 <main>
-	<slot>
-</slot></main>
+	<slot/>
+</main>
 
-<footer>
-	<p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p>
-</footer>
+<!-- <footer>
+	<small>&copy 2021 Johannes Farmer Knudsen</small>
+</footer> -->
 
 <style>
 	main {
@@ -43,5 +45,3 @@
 		}
 	}
 </style>
-</Header>
-<slot></slot>

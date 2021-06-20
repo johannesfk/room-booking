@@ -3,9 +3,9 @@
     "name": "Stripboard: callsheet & day schedule creator",
     "icons": [
       {
-        "src": "/favicon.png",
+        "src": "/icon-192.png",
         "type": "image/png",
-        "sizes": "128x128"
+        "sizes": "192x192"
       }
     ],
     "start_url": "/?source=pwa",

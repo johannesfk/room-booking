@@ -2,9 +2,20 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" href="/favicon.png" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta http-equiv="x-ua-compatible" content="IE=edge,chrome=1" />
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+		<link rel="icon" type="image/png" href="/favicon.png" />
+		<link rel="apple-touch-icon" type="image/png" href="/icon-192.png" />
+		<meta name="theme-color" content="#3367D6" />
 		<link rel="manifest" href="/manifest.json" />
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta name="apple-mobile-web-app-title" content="DSC" />
+		
+		<meta name="description" content="EFC Room Booking">
 
 		<link
 			rel="preload"
@@ -28,12 +39,5 @@
 	<body>
 		<div id="svelte">%svelte.body%</div>
 		<noscript> Please enable JavaScript to continue using this application. </noscript>
-		<!-- <script>
-			window.addEventListener("load", () => {
-				if ("serviceWorker" in navigator) {
-					navigator.serviceWorker.register("service-worker.ts");
-				}
-			});
-		</script> -->
 	</body>
 </html>

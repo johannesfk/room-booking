@@ -50,7 +50,7 @@
 		justify-content: center;
 		border: 0;
 		background-color: transparent;
-		color: var(--text-color);
+		color: var(--text1);
 		font-size: 2rem;
 	}
 
@@ -66,7 +66,7 @@
 	path {
 		vector-effect: non-scaling-stroke;
 		stroke-width: 2px;
-		stroke: var(--text-color);
+		stroke: var(--text1);
 	}
 
 	.counter-viewport {
@@ -83,7 +83,7 @@
 		width: 100%;
 		height: 100%;
 		font-weight: 400;
-		color: var(--accent-color);
+		color: var(--brand);
 		font-size: 4rem;
 		display: flex;
 		align-items: center;

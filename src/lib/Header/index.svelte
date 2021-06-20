@@ -1,16 +1,19 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import logo from './svelte-logo.svg';
+	let currentRoom = "Sound Studio";
 </script>
 
-<header>
+<header class="surface2">
 	<div class="corner">
-		<a href="https://kit.svelte.dev">
-			<img src={logo} alt="SvelteKit" />
+		<a href="#menu">
+			<span class="material-icons"> menu </span>
 		</a>
 	</div>
-
-	<nav>
+	<div class="room-name">
+		<h1>{currentRoom}</h1>
+	</div>
+	
+	<!-- <nav>
 		<svg viewBox="0 0 2 3" aria-hidden="true">
 			<path d="M0,0 L1,2 C1.5,3 1.5,3 2,3 L2,0 Z" />
 		</svg>
@@ -22,7 +25,7 @@
 		<svg viewBox="0 0 2 3" aria-hidden="true">
 			<path d="M0,0 L0,3 C0.5,3 0.5,3 1,2 L2,0 Z" />
 		</svg>
-	</nav>
+	</nav> -->
 
 	<div class="corner">
 		<!-- TODO put something else here? github link? -->
@@ -33,6 +36,13 @@
 	header {
 		display: flex;
 		justify-content: space-between;
+	}
+
+	.room-name {
+		flex-grow: 2;
+		display: flex;
+		align-items: center;
+		justify-content: left;
 	}
 
 	.corner {
@@ -46,9 +56,10 @@
 		justify-content: center;
 		width: 100%;
 		height: 100%;
+		text-decoration: none;
 	}
 
-	.corner img {
+	/* .corner img {
 		width: 2em;
 		height: 2em;
 		object-fit: contain;
@@ -97,7 +108,7 @@
 		top: 0;
 		left: calc(50% - var(--size));
 		border: var(--size) solid transparent;
-		border-top: var(--size) solid var(--accent-color);
+		border-top: var(--size) solid var(--brand);
 	}
 
 	nav a {
@@ -112,9 +123,9 @@
 		letter-spacing: 10%;
 		text-decoration: none;
 		transition: color 0.2s linear;
-	}
+	} */
 
 	a:hover {
-		color: var(--accent-color);
+		color: var(--brand);
 	}
 </style>
