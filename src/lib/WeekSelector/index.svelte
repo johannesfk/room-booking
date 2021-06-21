@@ -7,7 +7,7 @@
     let year = "2021";
 </script>
 
-<nav class="week-selector surface3">
+<nav class="week-selector surface3 rad-shadow">
     <div class="week-navigator">
         <div class="week-nav">
             <a href="#week-back">
@@ -96,6 +96,9 @@
         justify-content: space-between;
         width: 100%;
         padding-bottom: 5px;
+        position: fixed;
+        overflow: hidden;
+        top: 3em;
     }
     .week-navigator {
         display: flex;

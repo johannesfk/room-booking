@@ -34,8 +34,13 @@
 
 <style>
 	header {
+		overflow: hidden;
 		display: flex;
 		justify-content: space-between;
+		position: fixed;
+		top: 0;
+		width: 100vw;
+		padding-bottom: 1px;
 	}
 
 	.room-name {

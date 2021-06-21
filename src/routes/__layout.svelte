@@ -1,14 +1,14 @@
 <script lang="ts">
 	import Header from '$lib/Header/index.svelte';
-	import WeekSelector from '$lib/WeekSelector/index.svelte';
 	import "../app.postcss";
+	import Calendar from './calendar.svelte';
+	import WeekSelector from '$lib/WeekSelector/index.svelte';
 </script>
 
 <Header/>
 <WeekSelector/>
-
 <main>
-	<slot/>
+	<Calendar/>
 </main>
 
 <!-- <footer>
@@ -25,6 +25,7 @@
 		max-width: 1024px;
 		margin: 0 auto;
 		box-sizing: border-box;
+        margin-top: 9.6em;
 	}
 
 	footer {
