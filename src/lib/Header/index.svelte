@@ -1,17 +1,21 @@
 <script lang="ts">
 	import { page } from '$app/stores';
+	import Menu from '$routes/Menu/index.svelte';
 	let currentRoom = "Sound Studio";
+
+	let menu_show = false;
 </script>
 
 <header class="surface2">
 	<div class="corner">
-		<a href="#menu">
+		<a href="#menu" on:click={() => menu_show = !menu_show}>
 			<span class="material-icons"> menu </span>
 		</a>
 	</div>
 	<div class="room-name">
 		<h1>{currentRoom}</h1>
 	</div>
+	
 	
 	<!-- <nav>
 		<svg viewBox="0 0 2 3" aria-hidden="true">
@@ -28,9 +32,10 @@
 	</nav> -->
 
 	<div class="corner">
-		<!-- TODO put something else here? github link? -->
+		<!-- TODO put something here?  -->
 	</div>
 </header>
+<Menu bind:show={menu_show} />
 
 <style>
 	header {
@@ -50,9 +55,14 @@
 		justify-content: left;
 	}
 
+	.room-name h1 {
+		font-family: Lora, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+		font-weight: 500;
+	}
+
 	.corner {
-		width: 3em;
-		height: 3em;
+		width: 3rem;
+		height: 3rem;
 	}
 
 	.corner a {

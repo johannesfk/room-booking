@@ -138,14 +138,4 @@
         clip-path: circle();
         background-color: var(--brand);
     }
-
-    .date-selected-bg {
-        shape-outside: circle();
-        clip-path: circle();
-        background-color: violet;
-        height: 21px;
-        width: 21px;
-        top: calc(50% - 21px / 2);
-        display: block;
-    }
 </style>
