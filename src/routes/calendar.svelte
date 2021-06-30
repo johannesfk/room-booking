@@ -1,6 +1,9 @@
 <script>
     import TimeSlot from '$lib/TimeSlot/index.svelte';
 
+    import dayjs from 'dayjs';
+    dayjs().format();
+
     
     let d = new Date();
     let selectedDate = d.setFullYear(2021, 8, 7);
@@ -28,7 +31,6 @@
 
     let timeSlots = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23];
 
-    var datesInMonth = new Date(d.getFullYear(), d.getMonth(), 0).getDate();
 </script>
 
 <section class="time-slots">

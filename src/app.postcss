@@ -2,7 +2,23 @@
 
 /* Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
-font-family: 'Lora', serif;
+
+
+@font-face {
+    font-family: 'Anicons Regular';
+    src: url('/static/icons/Anicons/AniconsGX.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.anicon {
+	font-family: "Anicons Regular", sans-serif;
+	font-variation-settings: "TIME" 1;
+	transition: font-variation-settings 0.4s ease;
+}
+.anicon:hover {
+	font-variation-settings: "TIME" 100;
+}
 
 @use postcss-preset-env {
 	stage: 0;

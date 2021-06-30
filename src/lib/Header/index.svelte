@@ -9,7 +9,8 @@
 <header class="surface2">
 	<div class="corner">
 		<a href="#menu" on:click={() => menu_show = !menu_show}>
-			<span class="material-icons"> menu </span>
+			<!-- <span class="material-icons"> menu </span> -->
+			<span class="anicon"> A </span>
 		</a>
 	</div>
 	<div class="room-name">
@@ -37,7 +38,7 @@
 </header>
 <Menu bind:show={menu_show} />
 
-<style>
+<style lang="scss">
 	header {
 		overflow: hidden;
 		display: flex;
@@ -72,6 +73,10 @@
 		width: 100%;
 		height: 100%;
 		text-decoration: none;
+
+		.anicon {
+			font-size: 2em;
+		}
 	}
 
 	/* .corner img {
