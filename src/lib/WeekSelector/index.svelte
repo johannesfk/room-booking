@@ -1,27 +1,64 @@
 <script lang="ts">
 
-    let d = new Date();
+    import { getWeekdays } from "$lib/dateTime";
+    import dayjs from "dayjs";
+    import isoWeek from 'dayjs/plugin/isoWeek';
+    dayjs.extend(isoWeek);
 
-    let date = d.getTime();
-    let month = "August";
-    let year = "2021";
+    let weekOffset = 0;
+    console.log(weekOffset);
+    
+    let weekDays = [
+        getWeekdays(0, weekOffset),
+        getWeekdays(1, weekOffset),
+        getWeekdays(2, weekOffset),
+        getWeekdays(3, weekOffset),
+        getWeekdays(4, weekOffset),
+        getWeekdays(5, weekOffset),
+        getWeekdays(6, weekOffset)
+    ];
+
+    let currentWeekday = dayjs();
+    let selectedWeekday = currentWeekday;
+
+    function updateWeek(direction:string) {
+        if (direction == "forward") {
+            weekOffset += 1;
+            selectedWeekday = selectedWeekday.add(1, 'week');           
+        } else if (direction == "backward") {
+            weekOffset -= 1;
+            selectedWeekday = selectedWeekday.subtract(1, 'week');
+        } else {
+            alert("An error occurded while updating week");
+        }
+        weekDays = [
+            getWeekdays(0, weekOffset),
+            getWeekdays(1, weekOffset),
+            getWeekdays(2, weekOffset),
+            getWeekdays(3, weekOffset),
+            getWeekdays(4, weekOffset),
+            getWeekdays(5, weekOffset),
+            getWeekdays(6, weekOffset)
+        ];
+    }
+
 </script>
 
 <nav class="week-selector surface3 rad-shadow">
     <div class="week-navigator">
         <div class="week-nav">
-            <a href="#week-back">
+            <a href="/?weekOffset_{weekOffset}" on:click={() => updateWeek("backward")}>
                 <span class="material-icons">
                     chevron_left
                 </span>
             </a>
         </div>
         <div class="monthYear">
-            <h2>{month}</h2>
-            <small>{year}</small>
+            <h2>{weekDays[0].monthName}</h2>
+            <small>{weekDays[0].year}</small>
         </div>
         <div class="week-nav">
-            <a href="#week-forward">
+            <a href="/?weekOffset_{weekOffset}" on:click={() => updateWeek("forward")}>
                 <span class="material-icons">
                     chevron_right
                 </span>
@@ -29,63 +66,20 @@
         </div>
     </div>
     <div class="week-days">
-        <a href="#date-{date}" class="day">
-            <div class="day-name">
-                <small>Mon</small>
-            </div>
-            <div class="day-date date-selected">
-                <p>7</p>
-                <!-- <div class="date-selected-bg"></div> -->
-            </div>
-        </a>
-        <a href="#date-{date}" class="day">
-            <div class="day-name">
-                <small>Tue</small>
-            </div>
-            <div class="day-date">
-                <p>8</p>
-            </div>
-        </a>
-        <a href="#date-{date}" class="day">
-            <div class="day-name">
-                <small>Wed</small>
-            </div>
-            <div class="day-date">
-                <p>9</p>
-            </div>
-        </a>
-        <a href="#date-{date}" class="day">
-            <div class="day-name">
-                <small>Thu</small>
-            </div>
-            <div class="day-date">
-                <p>10</p>
-            </div>
-        </a>
-        <a href="#date-{date}" class="day">
-            <div class="day-name">
-                <small>Fri</small>
-            </div>
-            <div class="day-date">
-                <p>11</p>
-            </div>
-        </a>
-        <a href="#date-{date}" class="day">
-            <div class="day-name">
-                <small>Sat</small>
-            </div>
-            <div class="day-date">
-                <p>12</p>
-            </div>
-        </a>
-        <a href="#date-{date}" class="day">
-            <div class="day-name">
-                <small>Sun</small>
-            </div>
-            <div class="day-date">
-                <p>13</p>
-            </div>
-        </a>
+        {#each weekDays as item,i}
+            <a href="/?{weekDays[i].fullDate}" class="day" on:click={() => selectedWeekday = weekDays[i].dt}
+                class:date-selected={selectedWeekday.format('YYYY-MM-DD') == weekDays[i].fullDate}
+                class:date-current={currentWeekday.format('YYYY-MM-DD') == weekDays[i].fullDate}>
+                <div class="day-name">
+                    <small>{weekDays[i].dayName}</small>
+                </div>
+                <div class="day-date">
+                    <p>{weekDays[i].date}</p>
+                </div>
+            </a>
+        {:else}
+            <p>An error occured.</p>
+        {/each}
     </div>
 </nav>
 
@@ -133,6 +127,11 @@
         text-align: center;
     }
 
+    .date-current p {
+        shape-outside: circle(0.5em);
+        clip-path: circle();
+        background-color: var(--surface4);
+    }
     .date-selected p {
         shape-outside: circle(0.5em);
         clip-path: circle();

@@ -1,14 +1,14 @@
-<script>
+<script lang="ts">
+    import WeekSelector from '$lib/WeekSelector/index.svelte';
     import TimeSlot from '$lib/TimeSlot/index.svelte';
 
     import dayjs from 'dayjs';
     dayjs().format();
 
     
-    let d = new Date();
-    let selectedDate = d.setFullYear(2021, 8, 7);
+    const d = new Date();
 
-    let slots = [
+    const slots = [
         {
             id: "fsfsf454",
             time: d.setHours(0),
@@ -30,9 +30,9 @@
     ];
 
     let timeSlots = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23];
-
 </script>
 
+<WeekSelector/>
 <section class="time-slots">
     {#each timeSlots as item}
     <TimeSlot>
@@ -44,6 +44,7 @@
 <style>
     .time-slots {
         border: 1px solid hsl(var(--brand-hue) 10% 50% / 15%);
+        padding: 1rem;
     }
 
     .time-text {

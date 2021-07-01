@@ -10,13 +10,12 @@
 	<div class="corner">
 		<a href="#menu" on:click={() => menu_show = !menu_show}>
 			<!-- <span class="material-icons"> menu </span> -->
-			<span class="anicon"> A </span>
+			<span class="anicon" class:anicon-end="{menu_show === true}"> A </span>
 		</a>
 	</div>
 	<div class="room-name">
 		<h1>{currentRoom}</h1>
 	</div>
-	
 	
 	<!-- <nav>
 		<svg viewBox="0 0 2 3" aria-hidden="true">

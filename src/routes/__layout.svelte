@@ -2,11 +2,10 @@
 	import Header from '$lib/Header/index.svelte';
 	import "../app.postcss";
 	import Calendar from './calendar.svelte';
-	import WeekSelector from '$lib/WeekSelector/index.svelte';
 </script>
 
 <Header/>
-<WeekSelector/>
+
 <main>
 	<Calendar/>
 </main>
@@ -20,7 +19,6 @@
 		flex: 1;
 		display: flex;
 		flex-direction: column;
-		padding: 1rem;
 		width: 100%;
 		max-width: 1024px;
 		margin: 0 auto;
