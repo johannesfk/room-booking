@@ -6,7 +6,7 @@
     dayjs.extend(isoWeek);
 
     let weekOffset = 0;
-    console.log(weekOffset);
+    $: console.log(weekOffset);
     
     let weekDays = [
         getWeekdays(0, weekOffset),
@@ -44,26 +44,23 @@
 
 </script>
 
-<nav class="week-selector surface3 rad-shadow">
+<!-- TODO: Change on:click highlight color. -->
+<nav class="week-selector rad-shadow surface3">
     <div class="week-navigator">
-        <div class="week-nav">
-            <a href="/?weekOffset_{weekOffset}" on:click={() => updateWeek("backward")}>
-                <span class="material-icons">
-                    chevron_left
-                </span>
-            </a>
-        </div>
+        <a class="week-nav" href="/?weekOffset_{weekOffset}" on:click={() => updateWeek("backward")}>
+            <span class="material-icons" style="float: left;"> 
+                chevron_left
+            </span>
+        </a>
         <div class="monthYear">
             <h2>{weekDays[0].monthName}</h2>
             <small>{weekDays[0].year}</small>
         </div>
-        <div class="week-nav">
-            <a href="/?weekOffset_{weekOffset}" on:click={() => updateWeek("forward")}>
-                <span class="material-icons">
-                    chevron_right
-                </span>
-            </a>
-        </div>
+        <a class="week-nav" href="/?weekOffset_{weekOffset}" on:click={() => updateWeek("forward")}>
+            <span class="material-icons" style="float: right;">
+                chevron_right
+            </span>
+        </a>
     </div>
     <div class="week-days">
         {#each weekDays as item,i}
@@ -93,6 +90,10 @@
         position: fixed;
         overflow: hidden;
         top: 3em;
+        z-index: 8;
+
+        /* backdrop-filter: blur(15px);
+        background-color: rgba(17, 25, 40, 0.25); */
     }
     .week-navigator {
         display: flex;
@@ -100,6 +101,17 @@
         width: 100%;
         align-items: center;
         padding: 5px;
+    }
+    .week-nav {
+        height: 100%;
+        width: 30%;
+        display: block;
+    }
+    .week-nav:visited, .week-nav:hover, .week-nav:active {
+        color: none;
+    }
+    .week-nav span {
+        font-size: 2em;
     }
     .week-days {
         display: flex;

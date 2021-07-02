@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Header from '$lib/Header/index.svelte';
-	import "../app.postcss";
+	import "../app.scss";
 	import Calendar from './calendar.svelte';
 </script>
 
@@ -14,7 +14,7 @@
 	<small>&copy 2021 Johannes Farmer Knudsen</small>
 </footer> -->
 
-<style>
+<style lang="scss">
 	main {
 		flex: 1;
 		display: flex;

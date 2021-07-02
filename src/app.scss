@@ -1,8 +1,11 @@
 /* Write your global styles here, in PostCSS syntax */
 
-/* Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+@use '@fontsource/fira-mono';
 
+@use 'material-design-icons/iconfont/material-icons.css';
+
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
 
 @font-face {
     font-family: 'Anicons Regular';
@@ -11,27 +14,24 @@
     font-style: normal;
 }
 
+// Icons
 .anicon {
 	font-family: "Anicons Regular", sans-serif;
 	font-variation-settings: "TIME" 1;
 	transition: font-variation-settings 0.4s ease;
 }
-/* .anicon:hover {
-	font-variation-settings: "TIME" 100;
-} */
+
 .anicon-end {
 	font-variation-settings: "TIME" 100;
 }
 
-@use postcss-preset-env {
+/* @use postcss-preset-env {
 	stage: 0;
 	features: {
 		"logical-properties-and-values":false ;
 	}
-}
-@use '@fontsource/fira-mono';
+} */
 
-@use '~material-design-icons/iconfont/material-icons.css';
 
 
 :root {
@@ -46,7 +46,7 @@
 	--primary-color: #b9c6d2;
 	--secondary-color: #d0dde9;
 	--tertiary-color: #edf0f8;
-	--accent-color: #ff3e00;
+	--accent-color: hsl(15, 100%, 50%);
 	--heading-color: rgba(0, 0, 0, 0.7);
 	--text-color: #444444;
 	--background-without-opacity: rgba(255, 255, 255, 0.7);
@@ -177,14 +177,21 @@ html {
 	block-size: 100%;
 	background-color: var(--surface1);
 	color: var(--text1);
+	// background: linear-gradient(10deg, rgb(46, 32, 71) 0%, rgb(7, 46, 23) 100%);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
 }
 
 body {
 	min-block-size: 100%;
 	min-height: 100vh;
 	margin: 0;
-	background-color: var(--surface1);
-	/* background: linear-gradient(180deg, var(--tertiary-color) 0%, var(--surface1) 100%); */
+	// background-color: var(--surface1);
+	// background-color: #111927;
+    // background-image:
+    //    radial-gradient(at 47% 33%, hsl(162.00, 77%, 40%) 0, transparent 59%), 
+    //    radial-gradient(at 82% 65%, hsl(218.00, 39%, 11%) 0, transparent 55%);
+	// background: linear-gradient(45deg, rgba(135,16,16,1) 0%, rgba(9,9,121,1) 31%, rgba(0,212,255,1) 100%);
 }
 
 /* body::before {

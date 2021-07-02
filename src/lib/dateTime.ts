@@ -13,13 +13,14 @@ interface DateData {
     dt: any
 };
 
+// OUTDATED
 // offset: number, date: number, month: number, year: number
 export function getDate(dayOffset: number, weekOffset: number): DateData {
     // let dt = dayjs().year(year).month(month).date(date + offset);
     let dt = dayjs().add(weekOffset, 'week').add(dayOffset + 7, 'day');
 
     if (dt.isoWeekday() !== dt.startOf('isoWeek').isoWeekday()) {
-        dt = dayjs().add(weekOffset, 'week').add(dayOffset, 'day'); // .subtract(dt.isoWeekday() - dt.isoWeekday(1))
+        dt = dayjs().add(weekOffset, 'week').add(dayOffset, 'day');
     }
 
     const result = {

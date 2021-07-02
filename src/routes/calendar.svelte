@@ -35,9 +35,7 @@
 <WeekSelector/>
 <section class="time-slots">
     {#each timeSlots as item}
-    <TimeSlot>
-        <p class="time-text" slot="time">{item}:00</p>
-    </TimeSlot>
+        <TimeSlot data={item}/>
     {/each}
 </section>
 
@@ -45,9 +43,5 @@
     .time-slots {
         border: 1px solid hsl(var(--brand-hue) 10% 50% / 15%);
         padding: 1rem;
-    }
-
-    .time-text {
-        font-weight: bold;
     }
 </style>

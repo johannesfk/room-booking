@@ -47,7 +47,6 @@
         height: calc(100vh - 3rem);
         padding: 2rem 2rem;
         border-top: 2px solid var(--surface4);
-        // background: rgba(19, 38, 54, 0.75);
         background-color: var(--surface2);
         overflow-y: auto;
         width: 100vw;
@@ -56,8 +55,14 @@
         display: flex;
         flex-direction: column;
 
+        /* backdrop-filter: blur(15px);
+        background-color: rgba(17, 25, 40, 0.25);
+        background-color: hsl(357, 100%, 50%);
+        background-color: hsla(var(--accent-color) 0.5); */
+
         @media (min-aspect-ratio: 1/1 ) {
-            width: fit-content;
+            // eslint-disable-next-line ParseError
+            width: max-content;
             padding-right: 5rem;
             border-right: 1px solid var(--surface4);
         }
@@ -78,7 +83,7 @@
         font-family: Lora, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
         font-size: 2em;
         font-weight: 400;
-        // font-variant-caps: small-caps;
+        /* font-variant-caps: small-caps; */
         font-style: italic;
         font-variation-settings: 'ital' 1;
         :hover {
