@@ -33,7 +33,7 @@ const firebaseConfig: any = {
 
 
 const firebaseApp = initializeApp(firebaseConfig);
-const db = getFirestore();
+export const db = getFirestore();
 const analytics = getAnalytics();
 const auth = getAuth();
 

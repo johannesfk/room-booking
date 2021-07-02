@@ -1,6 +1,6 @@
 import cookie from 'cookie';
 import { v4 as uuid } from '@lukeed/uuid';
-import db from '$lib/firebase';
+import db from '$lib/InitFirebase';
 import type { Handle } from '@sveltejs/kit';
 
 export const handle: Handle = async ({ request, resolve }) => {
