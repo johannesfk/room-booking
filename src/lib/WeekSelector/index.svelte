@@ -1,5 +1,4 @@
 <script lang="ts">
-
     import { getWeekdays } from "$lib/dateTime";
     import dayjs from "dayjs";
     import isoWeek from 'dayjs/plugin/isoWeek';
@@ -45,7 +44,7 @@
 </script>
 
 <!-- TODO: Change on:click highlight color. -->
-<nav class="week-selector rad-shadow surface3">
+<nav class="week-selector rad-shadow">
     <div class="week-navigator">
         <a class="week-nav" href="/?weekOffset_{weekOffset}" on:click={() => updateWeek("backward")}>
             <span class="material-icons" style="float: left;"> 
@@ -81,6 +80,7 @@
 </nav>
 
 <style lang="scss">
+    @use './../../styles/mixins/glass';
     .week-selector {
         display: flex;
         flex-direction: column;
@@ -91,9 +91,12 @@
         overflow: hidden;
         top: 3em;
         z-index: 8;
+        background-color: var(--surface3);
+        color: var(--text1);
 
         /* backdrop-filter: blur(15px);
         background-color: rgba(17, 25, 40, 0.25); */
+        @include glass.glass;
     }
     .week-navigator {
         display: flex;
@@ -129,6 +132,10 @@
     .day {
         text-align: center;
         text-decoration: none;
+        &:active {
+			opacity: 1;
+		}
+        color: var(--text1);
     }
 
     .day-date p {

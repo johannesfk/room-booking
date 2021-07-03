@@ -1,0 +1,5 @@
+@mixin glass {
+	backdrop-filter: blur(18px);
+	/* opacity: 0.5; */
+    background-color: rgba(17, 25, 40, 0.25);
+}

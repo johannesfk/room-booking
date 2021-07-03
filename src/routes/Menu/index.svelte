@@ -19,6 +19,9 @@
         "Lower West"
     ];
 
+    let loggedIn = false;
+
+
 </script>
 {#if show}
     // TODO: Background scrollable when menu is open. Add class .no-scroll to main element when menu panel is open. Note: window & document methods are not available. Use svelte methods.
@@ -30,21 +33,33 @@
                 <p>An error occurred while fetching data.<br>Try to <a href="/?reload" on:click|once={ function() { location.reload(true) } }>reload</a> the page, and <a  href="/?clear-cache">clear</a> the cache.<br>If it still doesn't work, please <a href="mailto:johannesfknudsen@gmail.com?subject=Room%20Booking%20Error%20Report" target="_blank" rel="noreferrer">contact</a> the developer.</p>
             {/each}
         </div>
-        <div class="settings">
-
+        <div class="menu-footer">            
+            {#if loggedIn}
+            <a class="user" href="#user">
+                <i class="gg-log-out"></i>
+            </a>
+            {:else}
+                <a href="#login">
+                    <i class="gg-log-in"></i>
+                </a>
+            {/if}
+            <a class="settings" href="#settings">
+                <i class="gg-options"></i>
+            </a>
         </div>
     </nav>
 {/if}
 
 
-
-
 <style lang="scss">
+
+    @use './../../styles/mixins/glass';
     nav {
         position: fixed;
         top: 3rem;
         left: 0;
         height: calc(100vh - 3rem);
+        height: calc((var(--vh, 1vh) * 100) - 3rem);
         padding: 2rem 2rem;
         border-top: 2px solid var(--surface4);
         background-color: var(--surface2);
@@ -59,6 +74,8 @@
         background-color: rgba(17, 25, 40, 0.25);
         background-color: hsl(357, 100%, 50%);
         background-color: hsla(var(--accent-color) 0.5); */
+
+        @include glass.glass;
 
         @media (min-aspect-ratio: 1/1 ) {
             // eslint-disable-next-line ParseError
@@ -89,6 +106,31 @@
         :hover {
             color: var(red);
             background-color: blue;
+        }
+    }
+
+    .menu-footer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        border-top: 1px solid var(--surface4);
+        margin-top: 2em;
+        margin-left: 1em;
+        margin-right: 1em;
+        padding-top: 1em;
+        color: red;
+        --ggs: 2;
+        a {
+            height: 100%;
+            width: 3em;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin: 0 2em;
+            i {
+                margin: auto;
+
+            }
         }
     }
 </style>

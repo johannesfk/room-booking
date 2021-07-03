@@ -2,6 +2,10 @@
 	export const prerender = true;
 </script>
 
+<script lang="ts">
+
+</script>
+
 
 <svelte:head>
 	<title>Sound Studio - Room Booking</title>

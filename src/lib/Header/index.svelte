@@ -73,6 +73,9 @@
 		width: 100%;
 		height: 100%;
 		text-decoration: none;
+		&:active {
+			opacity: 1;
+		}
 
 		.anicon {
 			font-size: 2em;

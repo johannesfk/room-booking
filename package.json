@@ -41,6 +41,7 @@
 		"@fontsource/fira-mono": "^4.2.2",
 		"@lukeed/uuid": "^2.0.0",
 		"cookie": "^0.4.1",
+		"css.gg": "^2.0.0",
 		"dayjs": "^1.10.5",
 		"firebase": "^9.0.0-beta.2",
 		"material-design-icons": "^3.0.1"
