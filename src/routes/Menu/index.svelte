@@ -1,14 +1,8 @@
 <script>
     import { fly } from 'svelte/transition';
+    import Settings from '$routes/Settings/index.svelte'
 
     export let show = false;
-
-    if (show == true) {
-        console.log(show);
-    } else if (false) {
-        console.log(show);
-    }
-
 
     let rooms = [
         "Sound Studio",
@@ -19,9 +13,8 @@
         "Lower West"
     ];
 
-    let loggedIn = false;
-
-
+    let loggedIn = true;
+    let settings_show = false;
 </script>
 {#if show}
     // TODO: Background scrollable when menu is open. Add class .no-scroll to main element when menu panel is open. Note: window & document methods are not available. Use svelte methods.
@@ -38,16 +31,17 @@
             <a class="user" href="#user">
                 <i class="gg-log-out"></i>
             </a>
+            <a class="settings" href="#settings" on:click={() => settings_show = !settings_show}>
+                <i class="gg-options"></i>
+            </a>
             {:else}
                 <a href="#login">
                     <i class="gg-log-in"></i>
                 </a>
             {/if}
-            <a class="settings" href="#settings">
-                <i class="gg-options"></i>
-            </a>
         </div>
     </nav>
+    <Settings bind:show={settings_show} />
 {/if}
 
 
@@ -61,7 +55,7 @@
         height: calc(100vh - 3rem);
         height: calc((var(--vh, 1vh) * 100) - 3rem);
         padding: 2rem 2rem;
-        border-top: 2px solid var(--surface4);
+        border-top: 1px solid var(--surface4);
         background-color: var(--surface2);
         overflow-y: auto;
         width: 100vw;
@@ -70,18 +64,19 @@
         display: flex;
         flex-direction: column;
 
-        /* backdrop-filter: blur(15px);
+        backdrop-filter: blur(15px);
         background-color: rgba(17, 25, 40, 0.25);
         background-color: hsl(357, 100%, 50%);
-        background-color: hsla(var(--accent-color) 0.5); */
+        background-color: hsla(var(--accent-color) 0.5);
 
         @include glass.glass;
 
-        @media (min-aspect-ratio: 1/1 ) {
+        @media screen and (min-aspect-ratio: 1/1 ) {
             // eslint-disable-next-line ParseError
             width: max-content;
             padding-right: 5rem;
             border-right: 1px solid var(--surface4);
+            border-radius: 70% / 0 100% 100% 0;
         }
     }
 
@@ -92,6 +87,7 @@
         flex-direction: column;
         justify-content: space-between;
         margin: 1rem;
+        margin-left: 2.5rem;
     }
 
     .rooms > a {
@@ -119,7 +115,7 @@
         margin-right: 1em;
         padding-top: 1em;
         color: red;
-        --ggs: 2;
+        --ggs: 1.7;
         a {
             height: 100%;
             width: 3em;

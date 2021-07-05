@@ -39,7 +39,7 @@
     {/each}
 </section>
 
-<style>
+<style lang="scss">
     .time-slots {
         border: 1px solid hsl(var(--brand-hue) 10% 50% / 15%);
         padding: 1rem;

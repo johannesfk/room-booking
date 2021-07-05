@@ -86,6 +86,7 @@
         flex-direction: column;
         justify-content: space-between;
         width: 100%;
+        max-width: 1024px;
         padding-bottom: 5px;
         position: fixed;
         overflow: hidden;
@@ -104,6 +105,7 @@
         width: 100%;
         align-items: center;
         padding: 5px;
+        padding-top: 7px;
     }
     .week-nav {
         height: 100%;
