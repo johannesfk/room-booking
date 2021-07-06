@@ -12,13 +12,13 @@
 		"format": "prettier --write --plugin-search-dir=. ."
 	},
 	"devDependencies": {
-		"@sveltejs/kit": "^1.0.0-next.119",
-		"@types/cookie": "^0.4.0",
-		"@typescript-eslint/eslint-plugin": "^4.28.1",
-		"@typescript-eslint/parser": "^4.28.1",
+		"@sveltejs/kit": "^1.0.0-next.121",
+		"@types/cookie": "^0.4.1",
+		"@typescript-eslint/eslint-plugin": "^4.28.2",
+		"@typescript-eslint/parser": "^4.28.2",
 		"autoprefixer": "^10.2.5",
 		"cssnano": "^5.0.2",
-		"eslint": "^7.29.0",
+		"eslint": "^7.30.0",
 		"eslint-config-airbnb-base": "^14.2.1",
 		"eslint-config-prettier": "^8.1.0",
 		"eslint-plugin-import": "^2.23.4",
@@ -34,7 +34,7 @@
 		"svelte-check": "^2.2.0",
 		"svelte-preprocess": "^4.7.3",
 		"tslib": "^2.0.0",
-		"typescript": "^4.3.4"
+		"typescript": "^4.3.5"
 	},
 	"type": "module",
 	"dependencies": {
@@ -42,8 +42,8 @@
 		"@lukeed/uuid": "^2.0.0",
 		"cookie": "^0.4.1",
 		"css.gg": "^2.0.0",
-		"dayjs": "^1.10.5",
-		"firebase": "^9.0.0-beta.2",
+		"dayjs": "^1.10.6",
+		"firebase": "^9.0.0-beta.6",
 		"material-design-icons": "^3.0.1"
 	}
 }
