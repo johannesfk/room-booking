@@ -46,7 +46,7 @@
 		top: 0;
 		width: 100vw;
 		padding-bottom: 1px;
-		z-index: 10;
+		z-index: 11;
 	}
 
 	.room-name {

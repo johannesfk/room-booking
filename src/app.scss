@@ -59,8 +59,8 @@
 }
 * {
 	/* brand foundation */
-	--brand-hue: 200;
-	--brand-saturation: 100%;
+	--brand-hue: 220;
+	--brand-saturation: 93%;
 	--brand-lightness: 50%;
 
 	/* light */
@@ -77,6 +77,8 @@
 	/* dark */
 	--brand-dark: hsl(
 		var(--brand-hue) calc(var(--brand-saturation) / 2) calc(var(--brand-lightness) / 1.5));
+	--brand-dark: hsl(
+		var(--brand-hue) calc(var(--brand-saturation) / 1.5) calc(var(--brand-lightness) / 1.2));
 	--text1-dark: hsl(var(--brand-hue) 15% 85%);
 	--text2-dark: hsl(var(--brand-hue) 5% 65%);
 	--surface1-dark: hsl(var(--brand-hue) 10% 10%);

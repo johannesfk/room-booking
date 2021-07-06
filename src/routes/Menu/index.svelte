@@ -18,7 +18,7 @@
 </script>
 {#if show}
     // TODO: Background scrollable when menu is open. Add class .no-scroll to main element when menu panel is open. Note: window & document methods are not available. Use svelte methods.
-    <nav transition:fly={{x: -1000, opacity: 1}} class="menu">
+    <nav transition:fly={{x: -1000, opacity: 1}} class="menu" on:click|stopPropagation={() => settings_show = false}>
         <div class="rooms">
             {#each rooms as item}
                 <a href="#{item}">{item}</a>
@@ -52,9 +52,10 @@
         position: fixed;
         top: 3rem;
         left: 0;
-        height: calc(100vh - 3rem);
-        height: calc((var(--vh, 1vh) * 100) - 3rem);
+        height: calc(100vh - 3.2rem);
+        height: calc((var(--vh, 1vh) * 100) - 3.2rem);
         padding: 2rem 2rem;
+        box-sizing: border-box;
         border-top: 1px solid var(--surface4);
         background-color: var(--surface2);
         overflow-y: auto;
@@ -76,7 +77,8 @@
             width: max-content;
             padding-right: 5rem;
             border-right: 1px solid var(--surface4);
-            border-radius: 70% / 0 100% 100% 0;
+            border-right: 1px solid var(--surface4);
+            // border-radius: 70% / 0 100% 100% 0;
         }
     }
 

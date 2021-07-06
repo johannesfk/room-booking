@@ -73,10 +73,13 @@
 		flex-direction: row;
 		justify-content: flex-end;
 		background-color: var(--surface1);
-		border-bottom: 1px solid hsl(var(--brand-hue) 10% 50% / 15%);
+		border-top: 1px solid hsl(var(--brand-hue) 10% 50% / 15%);
 
 		/* backdrop-filter: blur(15px);
         background-color: rgba(17, 25, 40, 0.25); */
+		&:last-child {
+			border-bottom: 1px solid hsl(var(--brand-hue) 10% 50% / 15%);
+		}
 	}
     .time-text {
         font-weight: bold;
@@ -102,14 +105,14 @@
 		/* background-color: rgba(0, 0, 255, 0.1); */
 	}
 	.book-btn {
-		background-color: hsl(var(--brand-hue) 70% 40% / 30%);
+		background-color: hsl(var(--brand-hue) 80% 40% / 30%);
 		border: none;
 		width: 65%;
 		height: 100%;
 		text-transform: uppercase;
 		border-radius: 0.75em;
         &:active {
-            background-color: hsl(var(--brand-hue) 70% 80% / 30%);
+            background-color: hsl(var(--brand-hue) 80% 80% / 30%);
         }
     }
 	.free {

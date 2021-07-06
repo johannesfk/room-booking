@@ -29,19 +29,39 @@
         }
     ];
 
+    let loggedIn = false;
+
     let timeSlots = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23];
 </script>
 
 <WeekSelector/>
-<section class="time-slots">
-    {#each timeSlots as item}
-        <TimeSlot data={item}/>
-    {/each}
-</section>
+{#if loggedIn}
+    <section class="time-slots">
+        {#each timeSlots as item}
+            <TimeSlot data={item}/>
+        {/each}
+    </section>
+{:else if loggedIn === false}
+    <section class="no-login">
+        <h2>Please log in</h2>
+    </section>
+{:else}
+    <section class="no-login">
+        <p>An error occurred</p>
+    </section>
+{/if}
 
 <style lang="scss">
     .time-slots {
         border: 1px solid hsl(var(--brand-hue) 10% 50% / 15%);
-        padding: 1rem;
+        margin: 2rem;
+    }
+    .no-login {
+        margin: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 50vh;
     }
 </style>
