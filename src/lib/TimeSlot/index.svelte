@@ -1,6 +1,7 @@
 <script lang="ts">
     export let data;
 	let booked = false;
+	let status = 'free'; // 'booked'
 	let userRole = 'manager';
 	let userName = 'Johannes Farmer Knudsen';
 	let slotId = 'g4sh44f54f84g5s4';
@@ -45,6 +46,15 @@
 		}
 		return result;
 	}
+
+	import { createEventDispatcher } from 'svelte';
+    const dispatch = createEventDispatcher();
+
+    function bookingEvent (time) {
+        dispatch('bookEvent', {
+			time: time
+        });
+    }
 </script>
 
 <div class="time-slot" id={slotId}>
@@ -60,7 +70,7 @@
 				<p>Occupied{randomHeart(3)}</p>
 			{/if}
 		{:else if booked == false}
-			<button class="book-btn" on:click={() => alert(`Time is ${data}`)}>Book</button>
+			<button class="book-btn" on:click={() => bookingEvent(data)}>Book</button>
 		{:else}
 			<p>An error occurred!</p>
 		{/if}

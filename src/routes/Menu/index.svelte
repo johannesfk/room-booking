@@ -1,6 +1,10 @@
-<script>
+<script lang="ts">
     import { fly } from 'svelte/transition';
-    import Settings from '$routes/Settings/index.svelte'
+    import cookie from 'cookie';
+    import { createEventDispatcher } from 'svelte';
+    const dispatch = createEventDispatcher();
+
+    import Settings from '$routes/Settings/index.svelte';
 
     export let show = false;
 
@@ -13,6 +17,18 @@
         "Lower West"
     ];
 
+    function htmlString(str:string) {
+        return str.replace(/\s+/g, '-').toLowerCase();
+    }
+
+    // let currentRoom = rooms[0];
+
+    function changeRoom (room) {
+        dispatch('bookEvent', {
+			currentRoom: room
+        });
+    }
+
     let loggedIn = true;
     let settings_show = false;
 </script>
@@ -21,7 +37,7 @@
     <nav transition:fly={{x: -1000, opacity: 1}} class="menu" on:click|stopPropagation={() => settings_show = false}>
         <div class="rooms">
             {#each rooms as item}
-                <a href="#{item}">{item}</a>
+                <a href="/{htmlString(item)}" on:click={() => changeRoom(item)}>{item}</a>
             {:else}
                 <p>An error occurred while fetching data.<br>Try to <a href="/?reload" on:click|once={ function() { location.reload(true) } }>reload</a> the page, and <a  href="/?clear-cache">clear</a> the cache.<br>If it still doesn't work, please <a href="mailto:johannesfknudsen@gmail.com?subject=Room%20Booking%20Error%20Report" target="_blank" rel="noreferrer">contact</a> the developer.</p>
             {/each}
@@ -52,8 +68,9 @@
         position: fixed;
         top: 3rem;
         left: 0;
-        height: calc(100vh - 3.2rem);
-        height: calc((var(--vh, 1vh) * 100) - 3.2rem);
+        // height: calc(100vh - 3.2rem);
+        // height: calc((var(--vh, 1vh) * 100) - 3.2rem);
+        height: calc(100vh - 3rem);
         padding: 2rem 2rem;
         box-sizing: border-box;
         border-top: 1px solid var(--surface4);

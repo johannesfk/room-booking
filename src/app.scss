@@ -86,7 +86,7 @@
 	--surface3-dark: hsl(var(--brand-hue) 5% 20%);
 	--surface4-dark: hsl(var(--brand-hue) 5% 25%);
 	--surface-shadow-dark: var(--brand-hue) 50% 3%;
-	--shadow-strength-dark: 0.2;
+	--shadow-strength-dark: 0.25;
 
 	/* dim */
 	--brand-dim: hsl(
@@ -98,7 +98,7 @@
 	--surface3-dim: hsl(var(--brand-hue) 5% 30%);
 	--surface4-dim: hsl(var(--brand-hue) 5% 35%);
 	--surface-shadow-dim: var(--brand-hue) 30% 13%;
-	--shadow-strength-dim: 0.2;
+	--shadow-strength-dim: 0.25;
 }
 
 :root {
@@ -184,8 +184,10 @@ html {
 	background-color: var(--surface1);
 	color: var(--text1);
 	// background: linear-gradient(10deg, rgb(46, 32, 71) 0%, rgb(7, 46, 23) 100%);
+	background: linear-gradient(rgba(89, 100, 138, 0.25), rgba(79, 90, 121, 0.25), rgba(69, 80, 105, 0.25), rgba(59, 70, 89, 0.25), rgba(49, 60, 73, 0.25));
+	// background: linear-gradient(rgb(49, 60, 73), rgb(59, 70, 89), rgb(69, 80, 105), rgb(79, 90, 121), rgb(89, 100, 138));
 	background-repeat: no-repeat;
-	background-attachment: fixed;
+	background-attachment: fixed;;
 }
 
 body {
@@ -238,7 +240,7 @@ a {
 	text-decoration: none;
 	-webkit-tap-highlight-color: transparent;
 	&:active {
-		opacity: 0.5;
+		opacity: 0.25;
 	}
 }
 
@@ -262,7 +264,7 @@ pre {
 	background-color: rgba(255, 255, 255, 0.45);
 	border-radius: 3px;
 	box-shadow: 2px 2px 6px rgb(255 255 255 / 25%);
-	padding: 0.5em;
+	padding: 0.25em;
 	overflow-x: auto;
 	color: var(--text2);
 }
@@ -287,7 +289,7 @@ button:focus:not(:focus-visible) {
 
 .rad-shadow {
 	border: 1px solid hsl(var(--brand-hue) 10% 50% / 15%);
-	box-shadow: 0 1rem 0.5rem -0.5rem;
+	box-shadow: 0 1rem 0.25rem -0.25rem;
 	box-shadow: 0 2.8px 2.2px hsl(var(--surface-shadow) / calc(var(--shadow-strength) + 0.03)),
 		0 6.7px 5.3px hsl(var(--surface-shadow) / calc(var(--shadow-strength) + 0.01)),
 		0 12.5px 10px hsl(var(--surface-shadow) / calc(var(--shadow-strength) + 0.02)),

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Header from '$lib/Header/index.svelte';
 	import "../app.scss";
-	import Calendar from './calendar.svelte';
+	import Calendar from './calendar/[slug].svelte';
 
 
 /* 	// Fix viewport height
@@ -18,7 +18,7 @@
 
 	let lib;
 
-	if (browser) {
+/* 	if (browser) {
 		onMount(async () => {
 			// Fix viewport height
 			// First we get the viewport height and we multiple it by 1% to get a value for a vh unit
@@ -32,7 +32,7 @@
 				document.documentElement.style.setProperty('--vh', `${vh}px`);
 			});
 		});
-	}
+	} */
 </script>
 
 <Header/>
