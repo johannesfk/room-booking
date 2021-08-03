@@ -29,7 +29,7 @@
         }
     ];
 
-    let loggedIn = false;
+    let loggedIn = true;
 
     let timeSlots = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23];
 </script>
@@ -44,6 +44,9 @@
 {:else if loggedIn === false}
     <section class="no-login">
         <h2>Please log in</h2>
+        <a href="#login">
+            <i class="gg-log-in"></i>
+        </a>
     </section>
 {:else}
     <section class="no-login">
@@ -63,5 +66,9 @@
         align-items: center;
         justify-content: center;
         height: 50vh;
+        --ggs: 1.7;
+        a {
+            margin-top: 2em;
+        }
     }
 </style>
