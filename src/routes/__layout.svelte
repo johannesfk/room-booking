@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Header from '$lib/Header/index.svelte';
 	import "../app.scss";
-	import Calendar from './calendar.svelte';
+	import Calendar from './calendar/[slug].svelte';
 
 
 /* 	// Fix viewport height

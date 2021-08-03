@@ -2,8 +2,11 @@
 	import { page } from '$app/stores';
 	import Menu from '$routes/Menu/index.svelte';
 	let currentRoom = "Sound Studio";
-
 	let menu_show = false;
+
+	function handleChangeRoom(event) {
+		currentRoom = event.detail.changeRoom;
+	}
 </script>
 
 <header class="surface2">
@@ -35,7 +38,7 @@
 		<!-- TODO put something here?  -->
 	</div>
 </header>
-<Menu bind:show={menu_show} />
+<Menu bind:show={menu_show} on:bookEvent={handleChangeRoom}/>
 
 <style lang="scss">
 	header {

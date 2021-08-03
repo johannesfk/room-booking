@@ -2,7 +2,34 @@
     import WeekSelector from '$lib/WeekSelector/index.svelte';
     import TimeSlot from '$lib/TimeSlot/index.svelte';
 
+    // import { collection, addDoc } from "firebase/firestore"; 
+
+    /* async function newBookingEvent (event) {
+        if (loggedIn) {
+            alert(event.detail.time);
+            try {
+                const docRef = await addDoc(collection(db, "users"), {
+                    first: "Ada",
+                    last: "Lovelace",
+                    born: 1815
+                });
+                console.log("Document written with ID: ", docRef.id);
+            } catch (e) {
+                console.error("Error adding document: ", e);
+            }
+
+        } else {
+            alert("There's an login error!")
+        }
+    } */
+
+    function newBookingEvent(event) {
+        console.log("New booking", event.detail.time);
+        
+    }
+
     import dayjs from 'dayjs';
+    // import { db } from '$lib/InitFirebase';
     dayjs().format();
 
     
@@ -38,7 +65,7 @@
 {#if loggedIn}
     <section class="time-slots">
         {#each timeSlots as item}
-            <TimeSlot data={item}/>
+            <TimeSlot data={item} on:bookEvent={newBookingEvent}/>
         {/each}
     </section>
 {:else if loggedIn === false}
