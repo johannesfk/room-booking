@@ -1,7 +1,13 @@
 import cookie from 'cookie';
 import { v4 as uuid } from '@lukeed/uuid';
-import { db } from '$lib/InitFirebase';
+// import { db } from '$lib/InitFirebase';
+// import { firebaseConfig } from '$lib/InitFirebase';
 import type { Handle } from '@sveltejs/kit';
+
+// Make db a global function so we can use it in other files (e.g. `.firestore`)
+// global.db = db;
+
+// console.log(firebaseConfig);
 
 export const handle: Handle = async ({ request, resolve }) => {
 	const cookies = cookie.parse(request.headers.cookie || '');

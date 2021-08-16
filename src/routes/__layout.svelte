@@ -1,8 +1,21 @@
+<script context="module" lang="ts">
+	/* import { initFirebase } from '$lib/InitFirebase';
+
+	export async function load({page, fetch, session, context}) {
+		await initFirebase();
+		return {
+			props: {},
+		};
+	} */
+</script>
+
 <script lang="ts">
 	import Header from '$lib/Header/index.svelte';
 	import "../app.scss";
-	import Calendar from './calendar/[slug].svelte';
+	import Calendar from './calendar/[room].svelte';
 
+
+	
 
 /* 	// Fix viewport height
 	// We listen to the resize event
